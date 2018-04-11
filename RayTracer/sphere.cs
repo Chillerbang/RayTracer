@@ -8,9 +8,22 @@ namespace RayTracer
 {
     class sphere : Things
     {
+        public Vector center;
+        public double radius;
+        public Colors color;
+
+        sphere(Vector v, double r, Colors c)
+        {
+            center = v;
+            radius = r;
+            color = c;
+        }
+
         public Colors GetColor()
         {
-            throw new NotImplementedException();
+            // used to create color when trnsparent
+            //TO-DO
+            return color;
         }
 
         public void SetPostion(int x, int y)

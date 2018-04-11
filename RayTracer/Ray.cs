@@ -10,7 +10,6 @@ namespace RayTracer
     {
         public Vector orgin, direction;
         
-
         public Ray(Vector o, Vector dir)
         {
             orgin = o;
