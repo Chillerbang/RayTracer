@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RayTracer
 {
-    class Pixel
+    class LightSource
     {
     }
 }
