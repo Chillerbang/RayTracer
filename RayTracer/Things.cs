@@ -12,5 +12,6 @@ namespace RayTracer
         void SetPostion(int x, int y);
         void setRotation(double degree); // later to be implemented
         bool TestIntersection();         // will be true if rays touch
+        double findIntersection(Ray r);
     }
 }

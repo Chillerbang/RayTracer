@@ -19,6 +19,11 @@ namespace RayTracer
             color = c;
         }
 
+        public double findIntersection(Ray r)
+        {
+            throw new NotImplementedException();
+        }
+
         public Colors GetColor()
         {
             // used to create color when trnsparent

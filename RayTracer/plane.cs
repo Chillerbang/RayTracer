@@ -8,6 +8,11 @@ namespace RayTracer
 {
     class plane : Things
     {
+        public double findIntersection(Ray r)
+        {
+            throw new NotImplementedException();
+        }
+
         public Colors GetColor()
         {
             throw new NotImplementedException();
