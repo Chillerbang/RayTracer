@@ -10,11 +10,22 @@ using System.Windows.Forms;
 
 namespace Raytracer_v2
 {
-    public partial class Form1 : Form
+    public partial class UI : Form
     {
-        public Form1()
+        public UI()
         {
             InitializeComponent();
+        }
+
+        private void UI_Load(object sender, EventArgs e)
+        {
+            this.Text = "Ray Tracer";
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            // Start Ray trace
+
         }
     }
 }
