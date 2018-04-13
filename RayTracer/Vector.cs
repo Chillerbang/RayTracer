@@ -29,9 +29,20 @@ namespace RayTracer
         }
 
         //returns a new scalar multiplied vector
+        public Vector ScalarMultiply(double n)
+        {
+            return new Vector(x * n, y * n, z * n);
+        }
+
+        //returns a new scalar multiplied vector
         public Vector ScalarMultiply(double n, Vector v)
         {
             return new Vector(v.x * n, v.y * n, v.z * n);
+        }
+
+        public Vector negate()
+        {
+            return new Vector(-x, -y, -z);
         }
 
         public double dotProduct(Vector vect)

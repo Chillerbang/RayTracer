@@ -19,7 +19,7 @@ namespace RayTracer
             color = c;
         }
 
-        public double findIntersection(Ray r)
+        Vector findIntersection(Ray r)
         {
             throw new NotImplementedException();
         }
@@ -42,6 +42,11 @@ namespace RayTracer
         }
 
         public bool TestIntersection()
+        {
+            throw new NotImplementedException();
+        }
+
+        double Things.findIntersection(Ray r)
         {
             throw new NotImplementedException();
         }
