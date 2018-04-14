@@ -15,5 +15,7 @@ namespace RayTracer
             orgin = o;
             direction = dir;
         }
+
+        // add new intersection
     }
 }
