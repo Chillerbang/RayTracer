@@ -1,19 +1,14 @@
 ﻿using System;
-using RayTracer;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using RayTracer;
 
 namespace Raytracer_v2
 {
-    class Ray
+    class Plane : Shape
     {
-        Vector o, d;
-        public Ray(Vector o, Vector d)
-        {
-            this.o = o;
-            this.d = d;
-        }
+
     }
 }

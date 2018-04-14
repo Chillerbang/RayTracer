@@ -9,20 +9,29 @@ namespace Raytracer_v2
 {
     class Sphere : Shape
     {
-        double r;
+        public Vector center;
+        public double radius;
+        public double radiusPwr2;
+        public Colors surfaceColor, emmisionColor;
+        public float transparency, reflect;
+        public double r;
 
-        public Sphere(double r, Vector pos, Colors color) : base(pos, color)
+        public Sphere(Vector c, double rad, Vector shapeColor, double reflect, double trans, Vector emC)
         {
-            this.r = r;
+            center = c;
+            radius = rad;
+            radiusPwr2 = Math.Pow(rad,2);
+            reflect = 0;
+            trans = 0;
+            emC = new Vector(0,0,0);
+
         }
 
-        public override bool DoesIntersect(Vector orgin, Vector Dest, ref Vector ret)
+        public override bool DoesIntersect(Vector origin, Vector Dest, double t0, double t1)
         {
-            Vector vec = orgin - positionShape;
-            double b = Dest * vec;
-            double c = vec * vec - r * r;
-            double d = b * b - c;
-            if (d < 0)
+            Vector vec = center - origin;
+            double tca = vec * Dest;
+            if (tca < 0)
             {
                 return false;
             }

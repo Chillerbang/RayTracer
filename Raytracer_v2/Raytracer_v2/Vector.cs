@@ -59,7 +59,7 @@ namespace RayTracer
         }
 
 
-        public static double operator *(Vector n, Vector v)
+        public static double operator *(Vector n, Vector v) // dot product
         {
             return n.x*v.x + n.y*v.y + n.z*v.z;
         }
