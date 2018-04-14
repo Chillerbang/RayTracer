@@ -12,6 +12,7 @@ namespace RayTracer
         public double Green;
         public double Blue;
         public double Alpha;
+        
 
         public Colors(double Red, double Green, double Blue)
         {
@@ -54,6 +55,11 @@ namespace RayTracer
         public static Colors operator-(Colors c1, Colors c2)
         {
             return new Colors(c1.Red - c2.Red, c1.Green - c2.Green, c1.Blue - c2.Blue);
+        }
+
+        public override string ToString()
+        {
+            return String.Format("Color({0},{1},{2},{3})", Red, Green, Blue, Alpha);
         }
     }
 }
