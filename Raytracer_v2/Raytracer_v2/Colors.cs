@@ -22,6 +22,14 @@ namespace RayTracer
             Alpha = 1.0;
         }
 
+        public Colors(Colors c)
+        {
+            this.Red = c.Red;
+            this.Blue = c.Blue;
+            this.Green = c.Green;
+            this.Alpha = c.Alpha;
+        }
+
         public Colors(double Red, double Green, double Blue, double Alpha)
         {
             this.Red = Red;

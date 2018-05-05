@@ -45,8 +45,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Camera.cs" />
     <Compile Include="Colors.cs" />
+    <Compile Include="GeneralMatrix.cs" />
+    <Compile Include="Plane.cs" />
     <Compile Include="Ray.cs" />
+    <Compile Include="Shape.cs" />
+    <Compile Include="Sphere.cs" />
     <Compile Include="UI.cs">
       <SubType>Form</SubType>
     </Compile>

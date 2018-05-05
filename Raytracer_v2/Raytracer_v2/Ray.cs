@@ -1,19 +1,19 @@
 ﻿using System;
+using RayTracer;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RayTracer
+namespace Raytracer_v2
 {
-    class Ray // rays conist of 2 vectors
+    class Ray
     {
-        public Vector orgin, direction;
-        
-        public Ray(Vector o, Vector dir)
+        Vector o, d;
+        public Ray(Vector o, Vector d)
         {
-            orgin = o;
-            direction = dir;
+            this.o = o;
+            this.d = d;
         }
 
         // add new intersection
