@@ -13,12 +13,13 @@ namespace Raytracer_v2
     {
         protected int witdh = 0, height = 0;
 
-        double[][] pixels;
+        double[,] pixels;
 
         public ImgRender(int width, int height)
         {
             this.witdh = width;
             this.height = height;
+            pixels = new double[width,height];
         }
 
         public int getHeight()
@@ -32,7 +33,12 @@ namespace Raytracer_v2
         }
         public double getPixel(int x, int y)
         {
-            return pixels[x][y];
+            return pixels[x,y];
+        }
+
+        public void SetPixel(int x, int y, double val)
+        {
+            pixels[x,y] = val ;
         }
 
         public Bitmap saveImage(string filename)
@@ -44,12 +50,10 @@ namespace Raytracer_v2
                 {
                     for (int y = 0; y < height; y++)
                     {
-                        bmp.SetPixel(x, y, Color.FromArgb(255, 255, 0, 255));
+                        bmp.SetPixel(x, y, Color.FromArgb((int)(pixels[x,y]*255), (int)(pixels[x,y] * 255), (int)(pixels[x,y] * 255), (int)(pixels[x,y] * 255)));
                     }
                 }
             }
-            bmp.Save(filename+".bmp" ,ImageFormat.Bmp);
-
             return bmp;
         }
     }

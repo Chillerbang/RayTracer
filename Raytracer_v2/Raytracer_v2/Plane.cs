@@ -14,22 +14,22 @@ namespace Raytracer_v2
         public float MIN = 0.0001f;
         public float MAX = 1.0e20f;
 
-        public Plane(Vector p, Vector n)
+        public Plane(ref Vector p, ref Vector n)
         {
-           
+            Position = p; Normal = n;
         }
 
 
 
-        public override bool intersectionInter(Intersection i)
+        public override bool intersectionInter(ref Intersection i)
         {
             double dIntersect = i.r.d * Normal;
             if (dIntersect == 0)
             {
                 return false;
             }
-            Vector v1 = Position - i.r.o;
-            Vector v2 = Normal;
+            Vector v1 =new Vector( Position - i.r.o);
+            Vector v2 = new Vector(Normal);
             double t = v1 * v2 / dIntersect;
             if (t <= MIN || t > i.t)
             {
@@ -40,15 +40,15 @@ namespace Raytracer_v2
             return true;
         }
 
-        public override bool RayInter(Ray r)
+        public override bool RayInter(ref Ray r)
         {
             double dIntersect = r.d * Normal;
             if (dIntersect == 0)
             {
                 return false;
             }
-            Vector v1 = Position - r.o;
-            Vector v2 = Normal;
+            Vector v1 = new Vector(Position - r.o);
+            Vector v2 = new Vector(Normal);
             double t = v1 * v2 / dIntersect;
             if (t <= MIN || t > r.MAX)
             {

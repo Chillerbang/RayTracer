@@ -14,14 +14,15 @@ namespace Raytracer_v2
         public float MIN = 0.0001f;
         public float MAX = 1.0e20f;
 
-        public Sphere(Vector center, double radius)
+        public Sphere(ref Vector center, ref double radius)
         {
-
+            this.center = center;
+            this.radius = radius;
         }
 
-        public override bool intersectionInter(Intersection i)
+        public override bool intersectionInter(ref Intersection i)
         {
-            Ray Test = i.r;
+            Ray Test = new Ray(i.r);
             Test.o = Test.o - center;
 
             // quadratic number a,b,c
@@ -57,9 +58,9 @@ namespace Raytracer_v2
 
         }
 
-        public override bool RayInter(Ray r) // early exits
+        public override bool RayInter(ref Ray r) // early exits
         {
-            Ray Test = r;
+            Ray Test = new Ray(r);
             Test.o = Test.o - center;
 
             // quadratic number a,b,c

@@ -18,13 +18,13 @@ namespace Raytracer_v2
             // never used i guess
         }
 
-        public Intersection(Intersection i)
+        public Intersection(ref Intersection i)
         {
             r = i.r;
             t = i.t;
             s = i.s;
         }
-        public Intersection(Ray r)
+        public Intersection(ref Ray r)
         {
             this.r = r;
             t = r.MAX;

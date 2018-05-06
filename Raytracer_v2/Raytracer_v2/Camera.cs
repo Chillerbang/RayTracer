@@ -15,20 +15,22 @@ namespace Raytracer_v2
         public Vector right;
         public double[] reso = { 400, 400 }; // default hw
 
-        public Camera(Vector o, Vector dir, Vector vertical, double fov, float aspectRatio) // v == ug
+        public Camera(ref Vector o,ref Vector dir,ref Vector vertical, double fov, double aspectRatio) // v == ug
         {
             origin      = o;
-            direction = (dir - o).normalisedVector();
-            right = (dir ^ vertical).normalisedVector();
-            up = right ^ direction;
-            reso = new double[1];
+            Vector temp = new Vector(dir - o);
+            direction = temp.normalisedVector();
+            Vector temp2 = new Vector(dir ^ vertical);
+            right = temp2.normalisedVector();
+            up = new Vector( right ^ direction);
+            reso = new double[2];
             reso[0] = Math.Tan(fov);
-            reso[1] = Math.Tan(fov) * aspectRatio;
+            reso[1] = reso[0] * aspectRatio;
         }
 
-        public Ray ShootRay(_2DVector point) // fish eye
+        public  Ray ShootRay(ref _2DVector point) // fish eye
         {
-            Vector rayShot = direction + point.x * reso[1] * right + point.y * reso[0] * up;
+            Vector rayShot = new Vector  (direction + point.x * reso[1] * right + point.y * reso[0] * up);
             return new Ray(origin, rayShot.normalisedVector());
         }
 

@@ -12,21 +12,21 @@ namespace Raytracer_v2
 
         public Scene()
         {
-
+            shapeList.Clear();
         }
 
-        public void AddShape(Shape s)
+        public void AddShape(ref Shape s)
         {
             shapeList.Add(s);
         }
 
-        public override bool RayInter(Ray r)
+        public override bool RayInter(ref Ray r)
         {
             bool ret = false;
 
             foreach (Shape s in shapeList)
             {
-                if (s.RayInter(r))
+                if (s.RayInter(ref r))
                 {
                     ret = true;
                 }
@@ -34,13 +34,13 @@ namespace Raytracer_v2
             return ret;
         }
 
-        public override bool intersectionInter(Intersection i)
+        public override bool intersectionInter(ref Intersection i)
         {
             bool ret = false;
 
             foreach (Shape s in shapeList)
             {
-                if (s.intersectionInter(i))
+                if (s.intersectionInter(ref i))
                 {
                     return true;
                 }
