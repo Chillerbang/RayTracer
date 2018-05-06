@@ -8,7 +8,7 @@ namespace Raytracer_v2
 {
     class _2DVector
     {
-        double x, y;
+        public double x, y; // u,v
 
 
         public _2DVector(_2DVector v)

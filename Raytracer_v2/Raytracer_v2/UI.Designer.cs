@@ -38,10 +38,10 @@
             this.button1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.ForeColor = System.Drawing.SystemColors.Window;
-            this.button1.Location = new System.Drawing.Point(12, 564);
+            this.button1.Location = new System.Drawing.Point(8, 367);
             this.button1.Margin = new System.Windows.Forms.Padding(0);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(1111, 55);
+            this.button1.Size = new System.Drawing.Size(741, 36);
             this.button1.TabIndex = 0;
             this.button1.Text = "Generate";
             this.button1.UseVisualStyleBackColor = false;
@@ -49,20 +49,22 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(8, 8);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1111, 534);
+            this.pictureBox1.Size = new System.Drawing.Size(741, 347);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
             // UI
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(1135, 631);
+            this.ClientSize = new System.Drawing.Size(757, 410);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "UI";
             this.Text = "Ray Tracer";
             this.Load += new System.EventHandler(this.UI_Load);

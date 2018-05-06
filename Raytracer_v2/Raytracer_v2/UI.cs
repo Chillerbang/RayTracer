@@ -25,6 +25,14 @@ namespace Raytracer_v2
         private void button1_Click(object sender, EventArgs e)
         {
             // Start Ray trace
+            int width = 1920;
+            int height = 1080;
+            ImgRender ir = new ImgRender(width, height);
+            pictureBox1.Image =  ir.saveImage("imageTEst");
+        }
+
+        private void rayTrace(Bitmap img, Camera cam, Shape scene)
+        {
 
         }
     }

@@ -48,6 +48,7 @@
     <Compile Include="2DVector.cs" />
     <Compile Include="Camera.cs" />
     <Compile Include="Colors.cs" />
+    <Compile Include="ImgRender.cs" />
     <Compile Include="Intersection.cs" />
     <Compile Include="Plane.cs" />
     <Compile Include="Ray.cs" />
