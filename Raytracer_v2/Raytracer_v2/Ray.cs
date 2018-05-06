@@ -13,6 +13,7 @@ namespace Raytracer_v2
 
         public float MIN = 0.0001f;
         public float MAX = 1.0e20f;
+        Colors c;
 
         public Ray(Vector o, Vector d)
         {
@@ -29,8 +30,9 @@ namespace Raytracer_v2
 
         public Vector Intersect(double t)
         {
+            Vector temp1 = new Vector( d * t);
 
-            return o + d * t;
+            return new Vector(o + temp1);
         }
 
     }

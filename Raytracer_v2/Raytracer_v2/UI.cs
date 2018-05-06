@@ -49,7 +49,7 @@ namespace Raytracer_v2
 
             Scene se = new Scene();
             Vector pOrgin1 = new Vector(0.0, 0.0, 0.0);
-            Vector pDir1 = new Vector(0.0, 0.0, 0.0);
+            Vector pDir1 = new Vector(0.0, 0.0, 1.0);
             Vector sOrgin1 = new Vector(0.0, 0.0, 0.0);
             double r1 = 1.0;
             Vector sOrgin2 = new  Vector(0.0, 0.0, 0.0);
@@ -61,7 +61,7 @@ namespace Raytracer_v2
             Shape sh2 = s1;
             Shape sh3 = s2;
 
-            se.AddShape(ref sh1);
+            //se.AddShape(ref sh1);
             se.AddShape(ref sh2);
             Shape s = se;
 
@@ -81,17 +81,15 @@ namespace Raytracer_v2
 
                     Ray ray = new Ray( cam.ShootRay(ref screen));
 
-                    double current = img.getPixel(x, y);
+                    
                     Intersection inter = new Intersection(ref ray);
                     if (scene.intersectionInter(ref inter))
                     {
-                        current = 0.0;
-                        img.SetPixel(x, y, current);
+                        img.SetPixel(x, y, 0.0);
                     }
                     else
                     {
-                        current = 1.0;
-                        img.SetPixel(x, y, current);
+                        img.SetPixel(x, y, 1.0);
                     }
                 }
             }

@@ -19,9 +19,9 @@ namespace Raytracer_v2
         {
             origin      = o;
             Vector temp = new Vector(dir - o);
-            direction = temp.normalisedVector();
+            direction = new Vector(temp.normalisedVector());
             Vector temp2 = new Vector(dir ^ vertical);
-            right = temp2.normalisedVector();
+            right = new Vector(temp2.normalisedVector());
             up = new Vector( right ^ direction);
             reso = new double[2];
             reso[0] = Math.Tan(fov);

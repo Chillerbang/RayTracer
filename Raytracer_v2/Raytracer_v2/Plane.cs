@@ -13,6 +13,7 @@ namespace Raytracer_v2
         protected Vector Normal;
         public float MIN = 0.0001f;
         public float MAX = 1.0e20f;
+        public Colors c;
 
         public Plane(ref Vector p, ref Vector n)
         {
