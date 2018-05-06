@@ -9,6 +9,7 @@ namespace Raytracer_v2
 {
     abstract class Shape
     {
-        public abstract bool DoesIntersect(Vector origin, Vector Dest, double t0, double t1);
+        public abstract bool intersectionInter(Intersection i); // for intersection tesnt
+        public abstract bool RayInter(Ray r);      // for ray intersection
     }
 }

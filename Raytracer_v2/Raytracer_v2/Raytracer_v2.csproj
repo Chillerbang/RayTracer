@@ -45,11 +45,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="2DVector.cs" />
     <Compile Include="Camera.cs" />
     <Compile Include="Colors.cs" />
-    <Compile Include="GeneralMatrix.cs" />
+    <Compile Include="Intersection.cs" />
     <Compile Include="Plane.cs" />
     <Compile Include="Ray.cs" />
+    <Compile Include="Scene.cs" />
     <Compile Include="Shape.cs" />
     <Compile Include="Sphere.cs" />
     <Compile Include="UI.cs">

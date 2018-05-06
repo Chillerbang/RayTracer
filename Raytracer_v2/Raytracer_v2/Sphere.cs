@@ -40,7 +40,7 @@ namespace Raytracer_v2
             if (t < 0) {
                 return false;
             }
-            Vector intersect = Dest*t + orgin;
+            Vector intersect = Dest*t + origin;
             intersect = intersect - positionShape;
             ret =  intersect.normalise();
             return true;

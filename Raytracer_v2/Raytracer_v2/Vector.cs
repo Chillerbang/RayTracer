@@ -9,23 +9,15 @@ namespace RayTracer
     class Vector
     {
         // location of the vector location
-        public double x, y, z, w;
+        public double x, y, z;
         //*************************************************************************************************************************
         // constrcutor for standard vector
-        public Vector(double x, double y, double z, double w)
-        {
-            this.x = x;
-            this.y = y;
-            this.z = z;
-            this.w = w;
-        }
-
         public Vector(double x, double y, double z)
         {
             this.x = x;
             this.y = y;
             this.z = z;
-            this.w = 1.0;
+            
         }
 
         public Vector(Vector v)
@@ -33,29 +25,36 @@ namespace RayTracer
             this.x = v.x;
             this.y = v.y;
             this.z = v.z;
-            this.w = v.w;
+            
+        }
+
+        public Vector(double v)
+        {
+            x = v;
+            y = v;
+            z = v;
         }
 
         //*************************************************************************************************************************
 
         public static Vector operator +(Vector a, Vector v) {
-            return new Vector(a.x + v.x, a.y + v.y, a.z + v.z, a.w);
+            return new Vector(a.x + v.x, a.y + v.y, a.z + v.z);
         }
 
         public static Vector operator -(Vector a, Vector v)
         {
-            return new Vector(a.x - v.x, a.y - v.y, a.z - v.z, a.w);
+            return new Vector(a.x - v.x, a.y - v.y, a.z - v.z);
         }
 
         //returns a new scalar multiplied vector
         public static Vector operator *(double n, Vector v)
         {
-            return new Vector(v.x * n, v.y * n, v.z * n, v.w);
+            return new Vector(v.x * n, v.y * n, v.z * n);
         }
 
         public static Vector operator *(Vector v, double n)
         {
-            return new Vector(v.x * n, v.y * n, v.z * n, v.w);
+            return new Vector(v.x * n, v.y * n, v.z * n);
         }
 
 
@@ -67,7 +66,7 @@ namespace RayTracer
         // cross product
         public static Vector operator^(Vector a, Vector b)
         {
-            return new Vector(a.y * b.z - a.z * b.y, a.z * b.x - a.x * b.z, a.x * b.y - a.y * b.x, a.w);
+            return new Vector(a.y * b.z - a.z * b.y, a.z * b.x - a.x * b.z, a.x * b.y - a.y * b.x);
             
         }
 
@@ -84,12 +83,17 @@ namespace RayTracer
         // componenetwise multiply
         public static Vector operator%(Vector a, Vector b)
         {
-            return new Vector(a.x * b.x, a.y * b.y, a.z * b.z, a.w * b.w);
+            return new Vector(a.x * b.x, a.y * b.y, a.z * b.z);
         }
 
-        public double norm()
+        public double normal()
         {
             return Math.Sqrt((x * x) + (y * y) + (z * z));
+        }
+
+        public double normSqr()
+        {
+            return (x * x) + (y * y) + (z * z);
         }
 
         public Vector crossproduct(Vector vect)
@@ -97,15 +101,15 @@ namespace RayTracer
             return new Vector(y * vect.z - z * vect.y, z * vect.x - x * vect.z, x * vect.y - y * vect.x);
         }
 
-        public Vector normalise()
+        public Vector normalisedVector()
         {
-            double mag = norm();
+            double mag = normal();
             return new Vector(x / mag, y / mag, z / mag);
         }
 
         public override string ToString()
         {
-            return String.Format("({0},{1},{2},{3})",x,y,z,w);
+            return String.Format("({0},{1},{2})",x,y,z);
         }
 
 
