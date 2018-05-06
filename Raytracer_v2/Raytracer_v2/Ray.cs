@@ -9,7 +9,7 @@ namespace Raytracer_v2
 {
     class Ray
     { 
-        private Vector o, d;
+        public Vector o, d;
 
         public float MIN = 0.0001f;
         public float MAX = 1.0e20f;

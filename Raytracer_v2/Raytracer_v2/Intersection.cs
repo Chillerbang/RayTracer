@@ -9,9 +9,10 @@ namespace Raytracer_v2
 {
     class Intersection
     {
-        Ray r;
-        float t;
-        Shape s;
+        public Ray r;
+        public double t;
+        public Shape s;
+
         public Intersection()
         {
             // never used i guess

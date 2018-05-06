@@ -42,7 +42,7 @@ namespace Raytracer_v2
             {
                 if (s.intersectionInter(i))
                 {
-                    ret = true;
+                    return true;
                 }
             }
             return ret;

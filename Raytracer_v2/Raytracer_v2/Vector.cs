@@ -91,7 +91,7 @@ namespace RayTracer
             return Math.Sqrt((x * x) + (y * y) + (z * z));
         }
 
-        public double normSqr()
+        public double normSqr2()
         {
             return (x * x) + (y * y) + (z * z);
         }
