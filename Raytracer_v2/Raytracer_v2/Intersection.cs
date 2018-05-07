@@ -12,6 +12,8 @@ namespace Raytracer_v2
         public Ray r;
         public double t;
         public Shape s;
+        public Colors c;
+
 
         public Intersection()
         {

@@ -13,7 +13,7 @@ namespace Raytracer_v2
 
         public float MIN = 0.0001f;
         public float MAX = 1.0e20f;
-        Colors c;
+
 
         public Ray(Vector o, Vector d)
         {

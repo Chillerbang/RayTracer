@@ -15,7 +15,7 @@ namespace Raytracer_v2
         public float MAX = 1.0e20f;
         public Colors c;
 
-        public Plane(ref Vector p, ref Vector n)
+        public Plane(ref Vector p, ref Vector n, Colors c)
         {
             Position = p; Normal = n;
         }
@@ -38,6 +38,7 @@ namespace Raytracer_v2
             }
             i.t = t;
             i.s = this;
+            i.c = c;
             return true;
         }
 

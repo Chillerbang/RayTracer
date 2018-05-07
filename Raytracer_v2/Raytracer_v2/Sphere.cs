@@ -13,12 +13,13 @@ namespace Raytracer_v2
         public double radius;
         public float MIN = 0.0001f;
         public float MAX = 1.0e20f;
-        public Colors c;
+        public Colors col;
 
-        public Sphere(ref Vector center, ref double radius)
+        public Sphere(ref Vector center, ref double radius, Colors c)
         {
             this.center = center;
             this.radius = radius;
+            this.col = c;
         }
 
         public override bool intersectionInter(ref Intersection i)
@@ -53,8 +54,9 @@ namespace Raytracer_v2
             {
                 return false;
             }
-
             i.s = this;
+            i.c = col;
+
             return true;
 
         }

@@ -54,14 +54,15 @@ namespace Raytracer_v2
             double r1 = 1.0;
             Vector sOrgin2 = new  Vector(0.0, 0.0, 0.0);
             double r2 = 1.0;
-            Plane p1 = new Plane(ref pOrgin1, ref pDir1);
-            Sphere s1 = new Sphere(ref sOrgin1,ref r1);
-            Sphere s2 = new Sphere(ref sOrgin2, ref r2);
+
+            Plane p1 = new Plane(ref pOrgin1, ref pDir1,new Colors(255,120,100,80));
+            Sphere s1 = new Sphere(ref sOrgin1,ref r1, new Colors(255, 120, 100, 80));
+            Sphere s2 = new Sphere(ref sOrgin2, ref r2, new Colors(255, 120, 100, 80));
             Shape sh1 = p1;
             Shape sh2 = s1;
             Shape sh3 = s2;
 
-            //se.AddShape(ref sh1);
+            se.AddShape(ref sh1);
             se.AddShape(ref sh2);
             Shape s = se;
 
@@ -85,11 +86,11 @@ namespace Raytracer_v2
                     Intersection inter = new Intersection(ref ray);
                     if (scene.intersectionInter(ref inter))
                     {
-                        img.SetPixel(x, y, 0.0);
+                        img.SetPixel(x, y, inter.c);
                     }
                     else
                     {
-                        img.SetPixel(x, y, 1.0);
+                        img.SetPixel(x, y, new Colors(0,0,0,0));
                     }
                 }
             }

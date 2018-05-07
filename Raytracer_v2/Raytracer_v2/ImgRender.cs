@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RayTracer;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Imaging;
@@ -13,13 +14,13 @@ namespace Raytracer_v2
     {
         protected int witdh = 0, height = 0;
 
-        double[,] pixels;
+        Colors[,] pixels;
 
         public ImgRender(int width, int height)
         {
             this.witdh = width;
             this.height = height;
-            pixels = new double[width,height];
+            pixels = new Colors[width,height];
         }
 
         public int getHeight()
@@ -31,12 +32,12 @@ namespace Raytracer_v2
         {
             return witdh;
         }
-        public double getPixel(int x, int y)
+        public Colors getPixel(int x, int y)
         {
             return pixels[x,y];
         }
 
-        public void SetPixel(int x, int y, double val)
+        public void SetPixel(int x, int y, Colors val)
         {
             pixels[x,y] = val ;
         }
@@ -50,7 +51,7 @@ namespace Raytracer_v2
                 {
                     for (int y = 0; y < height; y++)
                     {
-                        bmp.SetPixel(x, y, Color.FromArgb((int)(pixels[x,y]*255), (int)(pixels[x,y] * 255), (int)(pixels[x,y] * 255), (int)(pixels[x,y] * 255)));
+                        bmp.SetPixel(x, y, Color.FromArgb((int)(pixels[x,y].Alpha*255), (int)(pixels[x,y].Red * 255), (int)(pixels[x,y].Green * 255), (int)(pixels[x,y].Blue * 255)));
                     }
                 }
             }
